@@ -85,17 +85,20 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 
 /* --- Name --- */
 .resume-page .r-name{
-    font-size:22pt;font-weight:bold;margin:0 0 3px;line-height:1.2;color:#000;letter-spacing:-0.3px;
+    font-size:19pt;font-weight:bold;margin:0 0 3px;line-height:1.2;color:#000;letter-spacing:-0.3px;
+    font-family:Calibri,Arial,'Helvetica Neue',sans-serif;
 }
 
 /* --- Subtitle (titles separated by |) --- */
 .resume-page .r-subtitle{
-    font-size:11pt;margin:0 0 10px;color:#333;font-weight:500;
+    font-size:15pt;margin:0 0 10px;color:#333;font-weight:500;
+    font-family:'Times New Roman',Times,serif;
 }
 
 /* --- Contact info --- */
 .resume-page .r-contact{
-    font-size:10pt;margin-bottom:6px;line-height:1.6;
+    font-size:10.5pt;margin-bottom:6px;line-height:1.6;
+    font-family:'Times New Roman',Times,serif;
 }
 .resume-page .r-contact-row{
     display:flex;align-items:center;gap:6px;margin:1px 0;
@@ -106,19 +109,22 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 
 /* --- Section heading --- */
 .resume-page .r-section{
-    font-size:13pt;font-weight:bold;
+    font-size:11.5pt;font-weight:bold;
     margin:14px 0 6px;padding-bottom:3px;
     border-bottom:1.5px solid #000;
+    font-family:Calibri,Arial,'Helvetica Neue',sans-serif;
 }
 
 /* --- Summary --- */
 .resume-page .r-summary{
     font-size:10.5pt;margin-bottom:4px;text-align:justify;
+    font-family:'Times New Roman',Times,serif;
 }
 
 /* --- Skills table --- */
 .resume-page .r-skills-table{
     width:100%;border-collapse:collapse;font-size:10.5pt;margin-bottom:2px;
+    font-family:'Times New Roman',Times,serif;
 }
 .resume-page .r-skills-table td{
     padding:1.5px 0;vertical-align:top;
@@ -131,7 +137,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 }
 
 /* --- Experience / Project entries --- */
-.resume-page .r-entry{margin-bottom:10px}
+.resume-page .r-entry{margin-bottom:10px;font-family:Calibri,Arial,'Helvetica Neue',sans-serif}
 .resume-page .r-entry-header{
     display:flex;justify-content:space-between;align-items:baseline;
     font-size:10.5pt;font-weight:bold;margin-bottom:1px;
@@ -144,24 +150,27 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 /* --- Project heading (bold title with parens meta) --- */
 .resume-page .r-proj-heading{
     font-size:10.5pt;font-weight:bold;margin-bottom:4px;
+    font-family:Calibri,Arial,'Helvetica Neue',sans-serif;
 }
 
 /* --- Bullet list --- */
 .resume-page ul.r-bullets{
     margin:2px 0 2px 18px;padding:0;font-size:10.5pt;
+    font-family:Calibri,Arial,'Helvetica Neue',sans-serif;
 }
 .resume-page ul.r-bullets li{
     margin-bottom:3px;text-align:justify;
 }
 
 /* --- Education --- */
-.resume-page .r-edu-entry{margin-bottom:6px}
+.resume-page .r-edu-entry{margin-bottom:6px;font-family:Calibri,Arial,'Helvetica Neue',sans-serif}
 .resume-page .r-edu-line1{font-size:10.5pt;font-weight:bold}
 .resume-page .r-edu-line2{font-size:10.5pt}
 
 /* --- Certificates --- */
 .resume-page ul.r-cert-list{
     margin:2px 0 2px 18px;padding:0;font-size:10.5pt;
+    font-family:Calibri,Arial,'Helvetica Neue',sans-serif;
 }
 .resume-page ul.r-cert-list li{margin-bottom:3px}
 
