@@ -1,0 +1,178 @@
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;min-height:100vh;color:#333}
+
+/* ===== APP SHELL ===== */
+.app-container{max-width:1700px;margin:0 auto;padding:16px}
+.app-header{text-align:center;padding:18px 0 14px;color:#1a1a2e}
+.app-header h1{font-size:1.8rem;font-weight:700}
+.app-header p{font-size:.95rem;color:#555;margin-top:4px}
+
+.main-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+
+/* ===== FORM PANEL ===== */
+.form-panel{background:#fff;border-radius:12px;padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.form-section{margin-bottom:24px}
+.form-section h2{font-size:1.05rem;color:#1a1a2e;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #e8e8e8}
+.section-desc{font-size:13px;color:#666;margin:-8px 0 12px;line-height:1.5}
+
+/* inputs */
+.form-panel input[type="text"],
+.form-panel input[type="email"],
+.form-panel input[type="tel"],
+.form-panel textarea{
+    width:100%;padding:10px 12px;margin-bottom:8px;
+    border:1.5px solid #d0d5dd;border-radius:6px;font-size:13.5px;
+    font-family:inherit;transition:border-color .2s;
+}
+.form-panel input:focus,.form-panel textarea:focus{outline:none;border-color:#4361ee}
+.form-panel textarea{resize:vertical}
+
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* entry cards */
+.entry-card{position:relative;background:#fafbfc;border:1px solid #e8e8e8;border-left:4px solid #4361ee;border-radius:8px;padding:14px 36px 10px 14px;margin-bottom:12px}
+.remove-entry-btn{position:absolute;top:10px;right:10px;background:#f0f0f0;border:1px solid #ddd;border-radius:50%;width:24px;height:24px;font-size:16px;color:#888;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:1}
+.remove-entry-btn:hover{color:#fff;background:#e74c3c;border-color:#e74c3c}
+
+/* bullet rows */
+.bullets-group{margin-top:8px}
+.bullets-group label{font-size:12px;font-weight:600;color:#555;display:block;margin-bottom:6px}
+.bullet-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.bullet-icon{font-size:18px;color:#888;flex-shrink:0;width:14px;text-align:center}
+.bullet-input{flex:1;padding:8px 10px;border:1.5px solid #d0d5dd;border-radius:6px;font-size:13px;font-family:inherit}
+.bullet-input:focus{outline:none;border-color:#4361ee}
+.remove-bullet-btn{background:none;border:none;font-size:18px;color:#ccc;cursor:pointer;flex-shrink:0}
+.remove-bullet-btn:hover{color:#e74c3c}
+.add-bullet-btn{background:none;border:none;color:#4361ee;font-size:12.5px;cursor:pointer;padding:2px 0;font-weight:600}
+.add-bullet-btn:hover{text-decoration:underline}
+
+/* add section btn */
+.add-btn{background:#4361ee;color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:13px;cursor:pointer;font-weight:600;transition:background .2s}
+.add-btn:hover{background:#3651d4}
+
+/* formatting hint */
+.fmt-hint{background:#f0f4ff;border:1px solid #c7d2fe;border-radius:8px;padding:12px 16px;font-size:13px;color:#444;line-height:1.6;margin-top:8px}
+.fmt-hint code{background:#e0e7ff;padding:2px 6px;border-radius:4px;font-size:12.5px;color:#3730a3}
+
+/* action buttons */
+.form-actions{display:flex;gap:12px;margin-top:20px;padding-top:16px;border-top:2px solid #e8e8e8}
+.btn-preview,.btn-download{flex:1;padding:13px;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-preview{background:#2d6a4f;color:#fff}
+.btn-preview:hover{background:#245a42}
+.btn-download{background:#e63946;color:#fff}
+.btn-download:hover{background:#c1121f}
+
+/* ===== PREVIEW PANEL ===== */
+.preview-panel{background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:16px;max-height:calc(100vh - 32px);display:flex;flex-direction:column}
+.preview-toolbar{background:#1a1a2e;color:#fff;padding:12px 20px;border-radius:12px 12px 0 0;font-weight:600;font-size:.95rem}
+.preview-page-wrapper{flex:1;overflow-y:auto;padding:20px;background:#e8e8e8;border-radius:0 0 12px 12px}
+
+/* ===== RESUME PAGE (ATS-FRIENDLY) ===== */
+.resume-page{
+    width:210mm;min-height:297mm;
+    padding:20mm 18mm 20mm 18mm;
+    background:#fff;
+    font-family:Calibri,Arial,'Helvetica Neue',sans-serif;
+    font-size:11pt;
+    line-height:1.5;
+    color:#000;
+    box-shadow:0 1px 8px rgba(0,0,0,.12);
+    margin:0 auto;
+}
+
+.empty-msg{text-align:center;color:#999;padding:80px 20px;font-family:'Segoe UI',sans-serif;font-size:14px}
+
+/* --- Name --- */
+.resume-page .r-name{
+    font-size:22pt;font-weight:bold;margin:0 0 3px;line-height:1.2;color:#000;letter-spacing:-0.3px;
+}
+
+/* --- Subtitle (titles separated by |) --- */
+.resume-page .r-subtitle{
+    font-size:11pt;margin:0 0 10px;color:#333;font-weight:500;
+}
+
+/* --- Contact info --- */
+.resume-page .r-contact{
+    font-size:10pt;margin-bottom:6px;line-height:1.6;
+}
+.resume-page .r-contact-row{
+    display:flex;align-items:center;gap:6px;margin:1px 0;
+}
+.resume-page .r-contact-row i{
+    font-size:10pt;flex-shrink:0;width:14px;text-align:center;color:#000;
+}
+
+/* --- Section heading --- */
+.resume-page .r-section{
+    font-size:13pt;font-weight:bold;
+    margin:14px 0 6px;padding-bottom:3px;
+    border-bottom:1.5px solid #000;
+}
+
+/* --- Summary --- */
+.resume-page .r-summary{
+    font-size:10.5pt;margin-bottom:4px;text-align:justify;
+}
+
+/* --- Skills table --- */
+.resume-page .r-skills-table{
+    width:100%;border-collapse:collapse;font-size:10.5pt;margin-bottom:2px;
+}
+.resume-page .r-skills-table td{
+    padding:1.5px 0;vertical-align:top;
+}
+.resume-page .r-skills-table .r-skill-cat{
+    font-weight:bold;white-space:nowrap;width:200px;padding-right:10px;
+}
+.resume-page .r-skills-table .r-skill-val{
+    padding-left:0;
+}
+
+/* --- Experience / Project entries --- */
+.resume-page .r-entry{margin-bottom:10px}
+.resume-page .r-entry-header{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:10.5pt;font-weight:bold;margin-bottom:1px;
+}
+.resume-page .r-entry-sub{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:10.5pt;margin-bottom:4px;
+}
+
+/* --- Project heading (bold title with parens meta) --- */
+.resume-page .r-proj-heading{
+    font-size:10.5pt;font-weight:bold;margin-bottom:4px;
+}
+
+/* --- Bullet list --- */
+.resume-page ul.r-bullets{
+    margin:2px 0 2px 18px;padding:0;font-size:10.5pt;
+}
+.resume-page ul.r-bullets li{
+    margin-bottom:3px;text-align:justify;
+}
+
+/* --- Education --- */
+.resume-page .r-edu-entry{margin-bottom:6px}
+.resume-page .r-edu-line1{font-size:10.5pt;font-weight:bold}
+.resume-page .r-edu-line2{font-size:10.5pt}
+
+/* --- Certificates --- */
+.resume-page ul.r-cert-list{
+    margin:2px 0 2px 18px;padding:0;font-size:10.5pt;
+}
+.resume-page ul.r-cert-list li{margin-bottom:3px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1300px){
+    .main-layout{grid-template-columns:1fr}
+    .preview-panel{position:relative;top:0;max-height:none}
+    .resume-page{width:100%;min-height:auto;padding:15mm 12mm}
+}
+@media(max-width:600px){
+    .row-2{grid-template-columns:1fr}
+    .app-container{padding:8px}
+    .form-panel{padding:16px}
+}

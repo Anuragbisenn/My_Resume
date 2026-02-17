@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Resume Builder</h1>
+            <p>ATS-Friendly Resume Generator</p>
+        </header>
+
+        <div class="main-layout">
+            <!-- FORM PANEL -->
+            <div class="form-panel">
+                <form id="resumeForm" autocomplete="off">
+
+                    <!-- Personal Information -->
+                    <section class="form-section">
+                        <h2>Personal Information</h2>
+                        <input type="text" id="fullName" placeholder="Full Name">
+                        <input type="text" id="subtitle" placeholder="Subtitle (e.g. AI Engineer | Data Scientist)">
+                        <div class="row-2">
+                            <input type="email" id="email" placeholder="Email">
+                            <input type="tel" id="phone" placeholder="Phone">
+                        </div>
+                        <input type="text" id="location" placeholder="Location (e.g. Burhanpur, Madhya Pradesh (450331))">
+                        <input type="text" id="linkedin" placeholder="LinkedIn URL">
+                        <input type="text" id="github" placeholder="GitHub (e.g. github.com/username)">
+                    </section>
+
+                    <!-- Professional Summary -->
+                    <section class="form-section">
+                        <h2>Professional Summary</h2>
+                        <textarea id="summary" rows="3" placeholder="Brief professional summary..."></textarea>
+                    </section>
+
+                    <!-- Technical Skills -->
+                    <section class="form-section">
+                        <h2>Technical Skills</h2>
+                        <div id="skillsContainer">
+                            <div class="entry-card skill-entry">
+                                <button type="button" class="remove-entry-btn" onclick="removeEntry(this)" title="Remove">&times;</button>
+                                <input type="text" class="skill-label" placeholder="Category (e.g. Language)">
+                                <input type="text" class="skill-value" placeholder="Values (e.g. Python, SQL)">
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addSkill()">+ Add Skill Row</button>
+                    </section>
+
+                    <!-- Experience -->
+                    <section class="form-section">
+                        <h2>Experience</h2>
+                        <div id="experienceContainer">
+                            <div class="entry-card exp-entry">
+                                <button type="button" class="remove-entry-btn" onclick="removeEntry(this)" title="Remove">&times;</button>
+                                <div class="row-2">
+                                    <input type="text" class="exp-title" placeholder="Job Title *">
+                                    <input type="text" class="exp-duration" placeholder="Duration (e.g. June 2024 - Present)">
+                                </div>
+                                <div class="row-2">
+                                    <input type="text" class="exp-company" placeholder="Company *">
+                                    <input type="text" class="exp-location" placeholder="Location (e.g. Indore, India)">
+                                </div>
+                                <div class="bullets-group">
+                                    <label>Bullet Points</label>
+                                    <div class="bullets-list">
+                                        <div class="bullet-row">
+                                            <span class="bullet-icon">&#8226;</span>
+                                            <input type="text" class="bullet-input" placeholder="Responsibility / achievement...">
+                                            <button type="button" class="remove-bullet-btn" onclick="removeBullet(this)" title="Remove">&times;</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="add-bullet-btn" onclick="addBullet(this)">+ Add Bullet</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addExperience()">+ Add Experience</button>
+                    </section>
+
+                    <!-- Projects -->
+                    <section class="form-section">
+                        <h2>Projects</h2>
+                        <div id="projectsContainer">
+                            <div class="entry-card project-entry">
+                                <button type="button" class="remove-entry-btn" onclick="removeEntry(this)" title="Remove">&times;</button>
+                                <div class="row-2">
+                                    <input type="text" class="proj-title" placeholder="Project Title (e.g. Multilingual RAG Chatbot)">
+                                    <input type="text" class="proj-meta" placeholder="Company & Duration (e.g. ClearTrail, 2024-2025)">
+                                </div>
+                                <div class="bullets-group">
+                                    <label>Bullet Points</label>
+                                    <div class="bullets-list">
+                                        <div class="bullet-row">
+                                            <span class="bullet-icon">&#8226;</span>
+                                            <input type="text" class="bullet-input" placeholder="Project detail...">
+                                            <button type="button" class="remove-bullet-btn" onclick="removeBullet(this)" title="Remove">&times;</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="add-bullet-btn" onclick="addBullet(this)">+ Add Bullet</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addProject()">+ Add Project</button>
+                    </section>
+
+                    <!-- Education -->
+                    <section class="form-section">
+                        <h2>Education</h2>
+                        <div id="educationContainer">
+                            <div class="entry-card edu-entry">
+                                <button type="button" class="remove-entry-btn" onclick="removeEntry(this)" title="Remove">&times;</button>
+                                <input type="text" class="edu-degree" placeholder="Degree (e.g. Bachelor of Technology)">
+                                <input type="text" class="edu-institution" placeholder="Institution">
+                                <div class="row-2">
+                                    <input type="text" class="edu-duration" placeholder="Duration (e.g. 08/2018-08/2022)">
+                                    <input type="text" class="edu-grade" placeholder="Grade (e.g. 86%)">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addEducation()">+ Add Education</button>
+                    </section>
+
+                    <!-- Certificates -->
+                    <section class="form-section">
+                        <h2>Certificates</h2>
+                        <div id="certificatesContainer">
+                            <div class="entry-card cert-entry">
+                                <button type="button" class="remove-entry-btn" onclick="removeEntry(this)" title="Remove">&times;</button>
+                                <input type="text" class="cert-name" placeholder="Certificate (e.g. Data Science and Machine Learning from Coursera)">
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addCertificate()">+ Add Certificate</button>
+                    </section>
+
+                    <!-- Custom Sections -->
+                    <section class="form-section">
+                        <h2>Custom Sections</h2>
+                        <p class="section-desc">Add any additional sections like Hobbies, Awards, Publications, Languages, etc.</p>
+                        <div id="customSectionsContainer">
+                            <div class="entry-card custom-section-entry">
+                                <button type="button" class="remove-entry-btn" onclick="removeEntry(this)" title="Remove">&times;</button>
+                                <input type="text" class="custom-section-title" placeholder="Section Title (e.g. Hobbies, Awards, Publications)">
+                                <div class="bullets-group">
+                                    <label>Items</label>
+                                    <div class="bullets-list">
+                                        <div class="bullet-row">
+                                            <span class="bullet-icon">&#8226;</span>
+                                            <input type="text" class="bullet-input" placeholder="Add item...">
+                                            <button type="button" class="remove-bullet-btn" onclick="removeBullet(this)" title="Remove">&times;</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="add-bullet-btn" onclick="addBullet(this)">+ Add Item</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addCustomSection()">+ Add Custom Section</button>
+                    </section>
+
+                    <!-- Formatting Hint -->
+                    <div class="fmt-hint">
+                        <strong>Tip:</strong> Wrap text in <code>**double asterisks**</code> to make it <strong>bold</strong> in the resume.<br>
+                        Example: Developed **Generative AI**-powered chatbots using **Python**
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-preview" onclick="generatePreview()">Preview Resume</button>
+                        <button type="button" class="btn-download" onclick="downloadResume()">Download PDF</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PREVIEW PANEL -->
+            <div class="preview-panel">
+                <div class="preview-toolbar">
+                    <span>Live Preview</span>
+                </div>
+                <div class="preview-page-wrapper">
+                    <div id="resumePreview" class="resume-page">
+                        <p class="empty-msg">Fill the form and click <strong>Preview Resume</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
